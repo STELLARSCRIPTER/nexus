@@ -6,6 +6,8 @@ By transforming fragmented, intentionally dirty CRM, deal, and financial data in
 
 > **Note on Data:** This project uses a custom-built, highly relational synthetic data generator (`Faker`, `NumPy`). It simulates 1.5+ million records and deliberately injects data quality defects (duplicates, missing IDs) to demonstrate a robust Entity Resolution pipeline. **No real client data is used.**
 
+Portfolio Link - https://thisisnexus.streamlit.app/
+
 ---
 
 ## 🏗️ Architecture & Data Pipeline (Medallion Architecture)
@@ -78,7 +80,7 @@ GRANT ALL PRIVILEGES ON DATABASE nexus TO nexus_user;
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/nexus.git
+git clone https://github.com/STELLARSCRIPTER/nexus
 cd nexus
 
 python -m venv .venv
