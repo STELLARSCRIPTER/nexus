@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+*.parquet
+.ipynb_checkpoints/
+.DS_Store
+*.log
+experiments/
+network.html

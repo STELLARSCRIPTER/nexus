@@ -1,0 +1,30 @@
+seed: 42
+paths:
+  raw_dir: "data/raw"
+  bronze_dir: "data/bronze"
+
+volumes:
+  funds: 40
+  firms: 25000
+  contacts: 100000
+  firm_contact: 150000
+  coverage: 30000
+  deals: 50000
+  deal_stage_history: 150000
+  transactions: 250000
+  fee_records: 150000
+  interactions: 250000
+  commitments: 75000
+  portfolio_companies: 10000
+  portfolio_events: 90000
+  external_observations: 200000
+
+defect_rates:
+  duplicate_firm: 0.03
+  missing_contact_link: 0.05
+  orphan_deal: 0.02
+  delayed_posting: 0.03
+
+date_range:
+  start: "2019-01-01"
+  end: "2025-12-31"

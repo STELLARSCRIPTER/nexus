@@ -186,14 +186,3 @@ NEXUS demonstrates the integration of:
 - Business Intelligence
 
 ---
-
-## 🔮 Future Improvements
-
-- Real-time financial data integration.
-- Advanced relationship recommendation engine.
-- Automated risk alerts.
-- Enhanced predictive modeling.
-- Interactive institutional network exploration.
-- Cloud deployment and scalable data pipelines.
-
----
