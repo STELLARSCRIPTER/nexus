@@ -88,7 +88,26 @@ query_rm = "SELECT rm_id, portfolio_size, total_revenue, quota, attainment_pct F
 df_rm = run_query(query_rm)
 
 if not df_rm.empty:
-    fig_quota = px.bar(df_rm, x='rm_id', y='total_revenue', text='attainment_pct', title="RM Revenue vs Quota", labels={'rm_id': 'Relationship Manager ID', 'total_revenue': 'Revenue (USD M)'})
-    fig_quota.add_scatter(x=df_rm['rm_id'], y=df_rm['quota'], mode='markers', name='Quota Target', marker=dict(color='red', size=12, symbol='line-ew'))
-    fig_quota.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
+    fig_quota = px.bar(
+        df_rm, 
+        x='rm_id', 
+        y='total_revenue', 
+        text='attainment_pct', 
+        title="RM Revenue vs Quota", 
+        labels={'rm_id': 'Relationship Manager ID', 'total_revenue': 'Revenue (USD M)'}
+    )
+    # Apply formatting ONLY to the bar chart trace
+    fig_quota.update_traces(
+        texttemplate='%{text:.1f}%', 
+        textposition='outside',
+        selector=dict(type='bar') # <--- This prevents the error on the scatter trace
+    )
+    # Add the red quota line
+    fig_quota.add_scatter(
+        x=df_rm['rm_id'], 
+        y=df_rm['quota'], 
+        mode='markers', 
+        name='Quota Target', 
+        marker=dict(color='red', size=12, symbol='line-ew')
+    )
     st.plotly_chart(fig_quota, use_container_width=True)
